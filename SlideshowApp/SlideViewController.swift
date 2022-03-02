@@ -174,13 +174,24 @@ class SlideViewController: UIViewController {
     @IBAction func tap(_ sender: Any) {
         
         performSegue(withIdentifier: "zoom", sender: nil)
+        
+        
+        if (timer != nil) {
+            
+            yellowButton.setTitle("停止", for: .normal)
+
+            yellowButton.tintColor = .white
+
+            blueButton.isEnabled = true
+            redButton.isEnabled = true
+            
+            timer.invalidate()
+            timer = nil
+
+
+        }
     
 
     }
     
-    
-    
-    //画像をタップすると画面を遷移させ、拡大画像と戻るボタンを表示させてください
-    //戻るボタンがタップされると、スライドショー画面に戻り、同じ画像を表示してください
-    //Auto Layoutを使用して、iPhone 8, iPhone 8 Plus, iPhone 13 mini, iPhone 13 Pro Maxの各画面サイズでレイアウトが崩れないようにしてください
 }
