@@ -43,19 +43,9 @@ class SlideViewController: UIViewController {
     @IBAction func start(_ sender: Any) {
         
         //画像を手動で進める
-        if imageIndex == 0 {
-            
-            imageIndex = 1
-            
-        } else if imageIndex == 1 {
-            
-            imageIndex = 2
-            
-        } else if imageIndex == 2 {
-            
-            imageIndex = 3
-            
-        } else if imageIndex == 3 {
+        imageIndex += 1
+
+        if imageIndex > imageArray.count - 1 {
             
             imageIndex = 0
             
@@ -63,29 +53,17 @@ class SlideViewController: UIViewController {
         
         imageView.image = imageArray[imageIndex]
         
-        
-        
     }
     
     //戻るボタン
     @IBAction func reset(_ sender: Any) {
         
         //画像を手動で戻る
-        if imageIndex == 0 {
+        imageIndex -= 1
+
+        if imageIndex < 0 {
             
-            imageIndex = 3
-            
-        } else if imageIndex == 1 {
-            
-            imageIndex = 0
-            
-        } else if imageIndex == 2 {
-            
-            imageIndex = 1
-            
-        } else if imageIndex == 3 {
-            
-            imageIndex = 2
+            imageIndex = imageArray.count - 1
             
         }
         
